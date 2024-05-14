@@ -8,12 +8,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from typing import Dict
 
+
 # stock = yf.Ticker("GOOGL")
 # print()
 # pprint(stock.info)
-
 def monte_carlo(stock_symbol, years, num_simulations) -> Dict[str,float] | None:
-
+    '''
+    :param: stock_symbol (str) - the stock symbol
+    :param: years (int) - the number of years to simulate
+    :param: num_simulations (int) - the number of simulations to run
+    '''
     try:
         # Fetch historical stock data
         stock_data = yf.download(stock_symbol, period="max")
